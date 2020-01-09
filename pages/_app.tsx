@@ -1,20 +1,14 @@
 import App from 'next/app'
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
-
-const theme = {
-  colors: {
-    primary: '#6E1FFF',
-  },
-}
+import { Theme } from '@artsy/palette'
 
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <ThemeProvider theme={theme}>
+      <Theme>
         <Component {...pageProps} />
-      </ThemeProvider>
+      </Theme>
     )
   }
 }
