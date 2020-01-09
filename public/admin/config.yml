@@ -1,0 +1,52 @@
+backend:
+  name: git-gateway
+  accept_roles: #optional - accepts all users if left out
+    - admin
+    - editor
+  branch: master # Branch to update (optional; defaults to master)
+# publish_mode: editorial_workflow
+media_folder: "public/images/uploads" # Media files will be stored in the repo under public/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+collections:
+  - name: "entry" # Used in routes, e.g., /admin/collections/blog
+    label: "Entry" # Used in the UI
+    folder: "_entries" # The path to the folder where the documents are stored
+    format: "json"
+    create: true # Allow users to create new documents in this collection
+    slug: "{{y}}-{{m}}-{{d}}-{{title}}" # Filename template
+    summary: "{{y}}-{{m}}-{{d}}: {{title}}" # Collection list view template
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Year"
+        name: "y"
+        widget: "number"
+        min: 2010
+        max: 2030
+      - label: "Month"
+        name: "m"
+        widget: "select"
+        options:
+        - { label: "1 - January", value: 1}
+        - { label: "2 - February", value: 2}
+        - { label: "3 - March", value: 3}
+        - { label: "4 - April", value: 4}
+        - { label: "5 - May", value: 5}
+        - { label: "6 - June", value: 6}
+        - { label: "7 - July", value: 7}
+        - { label: "8 - August", value: 8}
+        - { label: "9 - September", value: 9}
+        - { label: "10 - October", value: 10}
+        - { label: "11 - November", value: 11}
+        - { label: "12 - December", value: 12}
+      - label: "Day"
+        name: "d"
+        widget: "number"
+        min: 1
+        max: 31
+        required: false
+      - label: "Details"
+        name: "details"
+        widget: "markdown"
+        required: false
