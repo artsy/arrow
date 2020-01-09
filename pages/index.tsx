@@ -29,10 +29,6 @@ const HomePage: NextPage<TimelineProps> = () => {
         }
       `}</style>
       <Main>
-        <Sans size="16" my={3}>
-          Artsy History
-        </Sans>
-
         <Entries entries={entries} />
       </Main>
     </>
@@ -42,5 +38,6 @@ const HomePage: NextPage<TimelineProps> = () => {
 export default HomePage
 
 const Main = styled.main`
-  margin: ${space(2)}px;
+  width: 80vw;
+  margin: 0 auto;
 `

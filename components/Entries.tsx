@@ -23,4 +23,8 @@ export const Entries: React.FC<Props> = ({ entries }) => {
   )
 }
 
-const EntriesTable = styled.table``
+const EntriesTable = styled.table`
+  border: solid 0px #def;
+  border-collapse: separate;
+  border-spacing: 2vw 4vw;
+`
