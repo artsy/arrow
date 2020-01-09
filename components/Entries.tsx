@@ -9,8 +9,14 @@ export const Entries: React.FC<Props> = ({ entries }) => {
   return (
     <EntriesTable>
       <tbody>
-        {entries.map(e => {
-          return <Entry key={`${e.y}-${e.m}-${e.title}`} entry={e}></Entry>
+        {entries.map((e, i) => {
+          return (
+            <Entry
+              key={`${e.y}-${e.m}-${e.title}`}
+              entry={e}
+              previousEntry={entries[i - 1]}
+            ></Entry>
+          )
         })}
       </tbody>
     </EntriesTable>

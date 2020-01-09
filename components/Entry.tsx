@@ -10,13 +10,18 @@ export interface TimelineEntry {
 
 interface Props {
   entry: TimelineEntry
+  previousEntry: TimelineEntry
 }
 
-export const Entry: React.FC<Props> = ({ entry }) => {
+export const Entry: React.FC<Props> = ({ entry, previousEntry }) => {
   return (
     <EntryRow>
-      <Year>{entry.y}</Year>
-      <Month>{entry.m}</Month>
+      <Year isDifferent={previousEntry && entry.y !== previousEntry.y}>
+        {entry.y}
+      </Year>
+      <Month isDifferent={previousEntry && entry.m !== previousEntry.m}>
+        {entry.m}
+      </Month>
       <Title>{entry.title}</Title>
     </EntryRow>
   )
@@ -26,10 +31,12 @@ const EntryRow = styled.tr``
 
 const Year = styled.td`
   padding: 1em;
+  visibility: ${p => (p.isDifferent ? 'visible' : 'hidden')};
 `
 
 const Month = styled.td`
   padding: 1em;
+  visibility: ${p => (p.isDifferent ? 'visible' : 'hidden')};
 `
 
 const Title = styled.td`
