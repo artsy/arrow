@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styled from 'styled-components'
 import { Sans, space } from '@artsy/palette'
 import entries from '../data/entriesList.json'
+import { Entries } from '../components'
 
 interface TimelineProps {}
 
@@ -32,7 +33,7 @@ const HomePage: NextPage<TimelineProps> = () => {
           Artsy History
         </Sans>
 
-        <pre>{JSON.stringify(entries, null, 2)}</pre>
+        <Entries entries={entries} />
       </Main>
     </>
   )
