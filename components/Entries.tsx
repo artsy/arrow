@@ -27,4 +27,6 @@ const EntriesTable = styled.table`
   border: solid 0px #def;
   border-collapse: separate;
   border-spacing: 2vw 4vw;
+  width: 80vw;
+  margin: 0 auto;
 `

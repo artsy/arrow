@@ -55,9 +55,10 @@ const EntryCell = styled.td`
 const Year = styled(EntryCell)`
   visibility: ${p => (p.isNew ? 'visible' : 'hidden')};
 
+  color: ${color('black60')};
   font-family: ${themeProps.fontFamily.sans.regular};
   font-size: 4vw;
-  font-weight: 200;
+  font-weight: 400;
   vertical-align: top;
 
   ${p =>
