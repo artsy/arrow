@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { format } from 'date-fns'
 
 export interface TimelineEntry {
   title: string
@@ -13,6 +14,15 @@ interface Props {
   previousEntry: TimelineEntry
 }
 
+const formattedDate = (entry: TimelineEntry) => {
+  const { y, m, d } = entry
+  if (typeof d === 'number') {
+    return format(new Date(y, m, d), 'MMMM do')
+  } else {
+    return format(new Date(y, m, 1), 'MMMM')
+  }
+}
+
 export const Entry: React.FC<Props> = ({ entry, previousEntry }) => {
   const isNewYear = previousEntry ? entry.y !== previousEntry.y : true
   const isNewMonthAndDate = previousEntry
@@ -23,7 +33,7 @@ export const Entry: React.FC<Props> = ({ entry, previousEntry }) => {
     <EntryRow>
       <Year isNew={isNewYear}>{entry.y}</Year>
       <MonthAndDate isNew={isNewMonthAndDate}>
-        {[entry.m, entry.d].filter(x => x).join('-')}
+        {formattedDate(entry)}
       </MonthAndDate>
       <Title>{entry.title}</Title>
     </EntryRow>

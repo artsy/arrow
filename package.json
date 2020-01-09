@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "@artsy/palette": "^5.1.12",
+    "date-fns": "^2.9.0",
     "next": "^9.1.6",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
