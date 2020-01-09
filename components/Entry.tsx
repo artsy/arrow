@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { format } from 'date-fns'
 import { color, themeProps } from '@artsy/palette'
 
@@ -58,6 +58,15 @@ const Year = styled(EntryCell)`
   font-family: ${themeProps.fontFamily.sans.regular};
   font-size: 4vw;
   font-weight: 200;
+  vertical-align: top;
+
+  ${p =>
+    p.isNew &&
+    css`
+      position: sticky;
+      top: 1vw;
+      background: white;
+    `}
 `
 
 const MonthAndDate = styled(EntryCell)`
@@ -67,11 +76,10 @@ const MonthAndDate = styled(EntryCell)`
   color: ${color('purple100')};
   font-family: ${themeProps.fontFamily.sans.regular};
   font-size: 2vw;
-  font-weight: 500;
+  font-weight: 400;
+  padding-right: 2vw;
   text-align: right;
   white-space: nowrap;
-  padding-right: 2vw;
-  border-right: solid 2px ${color("black10")};
 `
 
 const Title = styled(EntryCell)`
