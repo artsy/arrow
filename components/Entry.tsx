@@ -36,7 +36,7 @@ export const Entry: React.FC<Props> = ({ entry, previousEntry }) => {
     : true
 
   return (
-    <EntryRow>
+    <EntryRow id={isNewYear ? `year-${entry.y}` : undefined}>
       <Year isNew={isNewYear}>{entry.y}</Year>
       <MonthAndDate isNew={isNewMonthAndDate}>
         {formattedDate(entry)}
