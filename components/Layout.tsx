@@ -5,6 +5,10 @@ export const Layout = ({ children }) => {
     <>
       <Head>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <link
+          rel="stylesheet"
+          href="https://webfonts.artsy.net/all-webfonts.css"
+        />
       </Head>
       <style jsx global>{`
         // minimal css reset
