@@ -16,7 +16,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "export": "yarn data && next build && next export",
+    "data": "node --no-warnings ./scripts/compile-entries.js"
   },
   "devDependencies": {
     "@types/node": "^13.1.2",
