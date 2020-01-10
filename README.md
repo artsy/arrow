@@ -23,7 +23,7 @@ The major pieces:
   - [Netlify CMS][netlify_cms]
   - [Netlify admin][netlify_admin]
 * __Deployment:__
-  - Every push to `master`, whether via GitHub or NetlifyCMS, results in a new deployment of the static files to the [website][static_site_deployment]
+  - Every push to `master`, whether via GitHub or NetlifyCMS, results in a new deployment of the static files to the [website][static_site_deployment], which is currently associated with [@anandaroop][anandaroop]'s Netlify account.
 * __Point People:__ [@anandaroop][anandaroop]
 
 ## Getting started
@@ -69,8 +69,8 @@ The project is laid out as follows. The `pages` and `components` directories are
 - **Developers**: Fork and PR as usual, even the CMS-managed data files under `_entries`. Merges to `master` will result in a deployment.
 - **Editors**: Use the [CMS][netlify_cms]. A signup with Netlify Identity may be required.
 
-[static_site_deployment]: https://goofy-kare-010333.netlify.com
-[static_site_slideshow]: https://goofy-kare-010333.netlify.com/slideshow
-[netlify_cms]: https://goofy-kare-010333.netlify.com/admin/#/
-[netlify_admin]: https://app.netlify.com/sites/goofy-kare-010333/overview
+[static_site_deployment]: https://artsy-timeline.netlify.com
+[static_site_slideshow]: https://artsy-timeline.netlify.com/slideshow
+[netlify_cms]: https://artsy-timeline.netlify.com/admin/#/
+[netlify_admin]: https://app.netlify.com/sites/artsy-timeline/overview
 [anandaroop]: https://github.com/anandaroop
