@@ -24,9 +24,9 @@ interface State {
 const formattedDate = (entry: TimelineEntry) => {
   const { y, m, d } = entry
   if (typeof d === 'number') {
-    return format(new Date(y, m, d), 'MMMM do, y')
+    return format(new Date(y, m-1, d), 'MMMM do, y')
   } else {
-    return format(new Date(y, m, 1), 'MMMM y')
+    return format(new Date(y, m-1, 1), 'MMMM y')
   }
 }
 

@@ -18,9 +18,9 @@ interface Props {
 const formattedDate = (entry: TimelineEntry) => {
   const { y, m, d } = entry
   if (typeof d === 'number') {
-    return format(new Date(y, m, d), 'MMMM d')
+    return format(new Date(y, m-1, d), 'MMMM d')
   } else {
-    return format(new Date(y, m, 1), 'MMMM')
+    return format(new Date(y, m-1, 1), 'MMMM')
   }
 }
 
