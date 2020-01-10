@@ -5,7 +5,7 @@ import { Layout, Slideshow } from '../components'
 const HomePage: NextPage = () => {
   return (
     <Layout>
-      <Slideshow entries={entries} duration={3} />
+      <Slideshow entries={entries} duration={3} shuffle />
     </Layout>
   )
 }

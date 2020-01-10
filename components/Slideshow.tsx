@@ -1,15 +1,20 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { format } from 'date-fns'
+import shuffleArray from 'lodash.shuffle'
 
 import { TimelineEntry } from './Entry'
 import { color, themeProps } from '@artsy/palette'
+import { isThisSecond } from 'date-fns/esm'
 
 interface Props {
   entries: TimelineEntry[]
 
   /** Duration of each slide, in seconds */
   duration: number
+
+  /** Randomize slide order? */
+  shuffle?: boolean
 }
 
 interface State {
@@ -32,6 +37,16 @@ export class Slideshow extends React.Component<Props, State> {
 
   private timer
 
+  private shuffledEntries
+
+  constructor(props) {
+    super(props)
+
+    if (props.shuffle) {
+      this.shuffledEntries = shuffleArray(props.entries)
+    }
+  }
+
   componentDidMount() {
     this.timer = setInterval(this.advance, this.props.duration * 1000)
   }
@@ -41,12 +56,17 @@ export class Slideshow extends React.Component<Props, State> {
   }
 
   render() {
+    const { shuffle } = this.props
+    const entries = shuffle ? this.shuffledEntries : this.props.entries
     return (
       <>
-        {this.props.entries.map((entry, i) => (
-          <Slide current={i === this.state.index}>
-            <Datestamp>{formattedDate(entry)}</Datestamp>
-            <Title>{entry.title}</Title>
+        {entries.map((e, i) => (
+          <Slide
+            key={`${e.y}-${e.m}-${e.title}`}
+            current={i === this.state.index}
+          >
+            <Datestamp>{formattedDate(e)}</Datestamp>
+            <Title>{e.title}</Title>
           </Slide>
         ))}
       </>
