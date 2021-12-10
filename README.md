@@ -10,7 +10,7 @@ The major pieces:
 
 - A [NextJS](https://nextjs.org) project, with support for Typescript and Palette
 - A [Netlify](https://www.netlify.com) deployment for the static site generated from the NextJS project
-- A [NetlifyCMS](https://www.netlifycms.org) configuration that allows editors to update this repo (and trigger a new static site deploy on each push to master)
+- A [NetlifyCMS](https://www.netlifycms.org) configuration that allows editors to update this repo (and trigger a new static site deploy on each push to main)
 - Data, seeded originally from [the document created in 2019](https://docs.google.com/document/d/1dM_AqU21Mo6gE05G398dEtE0SzGTM7r7pAo07w2UMSQ/edit), and now managed via the CMS
 
 ## Meta
@@ -23,7 +23,7 @@ The major pieces:
   - [Netlify CMS][netlify_cms]
   - [Netlify admin][netlify_admin]
 * __Deployment:__
-  - Every push to `master`, whether via GitHub or NetlifyCMS, results in a new deployment of the static files to the [website][static_site_deployment], which is currently associated with [@anandaroop][anandaroop]'s Netlify account.
+  - Every push to `main`, whether via GitHub or NetlifyCMS, results in a new deployment of the static files to the [website][static_site_deployment], which is currently associated with [@anandaroop][anandaroop]'s Netlify account.
 * __Point People:__ [@anandaroop][anandaroop]
 
 ## Getting started
@@ -66,7 +66,7 @@ The project is laid out as follows. The `pages` and `components` directories are
 
 ## Contributing
 
-- **Developers**: Fork and PR as usual, even the CMS-managed data files under `_entries`. Merges to `master` will result in a deployment.
+- **Developers**: Fork and PR as usual, even the CMS-managed data files under `_entries`. Merges to `main` will result in a deployment.
 - **Editors**: Use the [CMS][netlify_cms]. A signup with Netlify Identity may be required.
 
 [static_site_deployment]: https://artsy-timeline.netlify.com
